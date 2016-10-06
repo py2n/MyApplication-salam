@@ -1,0 +1,48 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="text_size_notes">14sp</dimen>
+
+    <!-- It is a good practice to follow official design metrics. -->
+    <!-- http://developer.android.com/design/style/metrics-grids.html -->
+
+    <dimen name="padding_action_bar_button_drawable">8dp</dimen>
+    <dimen name="padding_creation_layout">16dp</dimen>
+    <dimen name="padding_slides_grid">4dp</dimen>
+    <dimen name="padding_slides_pager">16dp</dimen>
+    <dimen name="padding_slide">4dp</dimen>
+    <dimen name="padding_header_underline">4dp</dimen>
+    <dimen name="padding_header">8dp</dimen>
+    <dimen name="padding_slide_notes">8dp</dimen>
+    <dimen name="padding_help">16dp</dimen>
+    <dimen name="padding_section_item">8dp</dimen>
+    <dimen name="padding_empty_slide_layout">16dp</dimen>
+
+    <dimen name="padding_horizontal_list">16dp</dimen>
+    <dimen name="padding_horizontal_list_item">8dp</dimen>
+    <dimen name="padding_horizontal_connection_layout">40dp</dimen>
+    <dimen name="padding_horizontal_action_bar_divider">12dp</dimen>
+    <dimen name="padding_horizontal_progress_layout">40dp</dimen>
+
+    <dimen name="padding_vertical_pin">8dp</dimen>
+    <dimen name="padding_vertical_error_message">12dp</dimen>
+    <dimen name="padding_vertical_edit">16dp</dimen>
+    <dimen name="padding_vertical_progress_message">8dp</dimen>
+    <dimen name="padding_vertical_learn_more">4dp</dimen>
+
+    <dimen name="margin_vertical_action_bar_divider">12dp</dimen>
+    <dimen name="margin_slide">8dp</dimen>
+
+    <dimen name="width_action_bar_divider">0.5dp</dimen>
+    <dimen name="width_slides_grid_column">88dp</dimen>
+
+    <dimen name="text_size_list_item">18sp</dimen>
+    <dimen name="text_size_pin">35sp</dimen>
+    <dimen name="text_size_error_title">20sp</dimen>
+
+    <dimen name="spacing_slides_grid">4dp</dimen>
+
+
+</resources>

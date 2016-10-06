@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">دستیار استاد</string>
+
+
+
+
+    <string name="application_name">نمایش گر اسلاید</string>
+
+    <string name="title_computers">دستگاه متصل</string>
+    <string name="title_generic">Generic</string>
+    <string name="title_bluetooth" translatable="false">اتصال بلوتوث</string>
+    <string name="title_wifi" translatable="false">اتصال وایرلس</string>
+    <string name="title_settings">تنظیمات</string>
+    <string name="title_requirements">نیازمندی ها</string>
+    <string name="title_connection">اتصال</string>
+    <string name="title_creation">ایجاد</string>
+    <string name="title_slide_show">نمایش اسلاید</string>
+    <string name="title_timer">زمان سنج</string>
+
+    <string name="menu_settings">تنظیمات</string>
+    <string name="menu_requirements">نیازمندی ها</string>
+    <string name="menu_reconnect">اتصال مجدد</string>
+    <string name="menu_add_computer">افزودن کامپیوتر</string>
+    <string name="menu_start_discovery">شروع جستجو</string>
+    <string name="menu_remove_computer">حذف</string>
+    <string name="menu_slides_grid">Slides grid</string>
+    <string name="menu_slides_pager">Slides pager</string>
+    <string name="menu_timer">زمان سنج</string>
+    <string name="menu_stop_slide_show">توقف نمایش اسلاید</string>
+    <string name="menu_pause_slide_show">مکث در نمایش اسلاید</string>
+    <string name="menu_resume_slide_show">ادامه نمایش اسلاید</string>
+    <string name="menu_start_pointer">نشانگر لیزر</string>
+    <string name="menu_stop_pointer">خروج از نشانگر لیزر</string>
+
+    <string name="button_cancel">لغو</string>
+    <string name="button_save">ذخیره</string>
+    <string name="button_start">شروع</string>
+    <string name="button_remove">حذف</string>
+
+    <string name="message_impress_pin_validation">Go to “Slide Show → Impress Remote” in LibreOffice Impress and enter the code.</string>
+    <string name="message_connection_failed_title">Connection failed</string>
+    <string name="message_impress_remote_enabling">Make sure you have enabled remote control. Go to “Tools → Options → LibreOffice Impress → General” in LibreOffice Impress.</string>
+    <string name="message_impress_wifi_enabling">You should also enable experimental features using “Tools → Options → LibreOffice → Advanced”.</string>
+    <string name="message_impress_pairing_check">In case of Bluetooth pairing issues, please read the documentation supplied by your Operating System.</string>
+    <string name="message_ip_address_validation">Please enter a valid IP address.</string>
+    <string name="message_time_is_up">زمان به پایان رسید!</string>
+    <string name="message_search_wifi">لطفا از روی یک شبکه بودن دستگاه با تبلت اطمینان حاصل نمایید</string>
+    <string name="message_search_bluetooth">لطفا از روشن بودن بلوتوث دستگاه اطمینان حاصل نمایید.</string>
+    <string name="message_learn_more"><a href="org.libreoffice.impressremote://requirements/">اطلاعات بیشتر</a></string>
+    <string name="message_paused">مکث</string>
+    <string name="message_notes_empty">نوشته ای موجود نیست</string>
+    <string name="hint_ip_address">آدرس ای پی</string>
+    <string name="hint_name">نام (ضروری)</string>
+
+    <string name="header_notes">نت ها</string>
+
+    <string name="mask_slide_show_progress">اسلاید %1$d از %2$d</string>
+    <plurals name="mask_timer_progress">
+        <item quantity="one">یک دقیقه باقی مانده است</item>
+        <item quantity="other">%d دقیقه تا پایان</item>
+    </plurals>
+
+    <string name="description_pager_slide">پیش نمایش اسلاید</string>
+    <string name="description_grid_slide">پیش نمایش اسلاید</string>
+    <string name="description_empty_slide">اسلاید خالی</string>
+
+    <string name="preferences_volume_keys_actions_title">کنترل با دکمه تنظیم صدا</string>
+    <string name="preferences_volume_keys_actions_summary">کنترل اسلاید با استفاده از دکمه تنظیم صدا</string>
+    <string name="preferences_keep_screen_on_title">روشن نگاه داشتن صفحه</string>
+    <string name="preferences_keep_screen_on_summary">اطمینان حاصل نمایید که صفحه نمایش دستگاه در حین نمایش اسلاید خاموش نمی شود.</string>
+    <string name="preferences_quiet_mode_title">حالت بی صدا</string>
+    <string name="preferences_quiet_mode_summary">قرار دادن دستگاه در حالت بی صدا هنگام نمایش اسلاید</string>
+
+    <string name="requirements_libreoffice_version">LibreOffice version 4.0.3 or higher running on a computer.</string>
+    <string name="requirements_libreoffice_general_enabled">Impress Remote enabled at “Tools → Options → LibreOffice Impress → General” in LibreOffice Impress.</string>
+    <string name="requirements_libreoffice_experimental_enabled">Experimental features enabled at “Tools → Options → LibreOffice → Advanced” in LibreOffice Impress.</string>
+    <string name="requirements_network_connection">The Android device and a computer connected to the same network.</string>
+    <string name="requirements_network_ports">If you have a firewall please ensure ports 1598 and 1599 are opened.</string>
+    <string name="requirements_bluetooth_connection">A computer with enabled Bluetooth.</string>
+
+</resources>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mohammad.myapplication">
+
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".uploader"></activity>
+
+        <activity
+            android:name=".connectToServer.activity.ComputersActivity"
+            android:theme="@style/Theme.ImpressRemote.Computers">
+
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+
+        </activity>
+
+        <activity
+            android:name=".connectToServer.activity.ComputerCreationActivity"
+            android:label="@string/title_creation"
+            android:theme="@style/Theme.ImpressRemote.ComputerCreation">
+        </activity>
+
+        <activity
+            android:name=".connectToServer.activity.ComputerConnectionActivity"
+            android:label="@string/title_connection">
+        </activity>
+
+        <activity
+            android:name=".connectToServer.activity.SlideShowActivity"
+            android:label="@string/title_slide_show">
+        </activity>
+
+        <activity
+            android:name=".connectToServer.activity.SettingsActivity"
+            android:label="@string/title_settings">
+        </activity>
+
+        <activity
+            android:name=".connectToServer.activity.RequirementsActivity"
+            android:label="@string/title_requirements">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <data android:scheme="org.libreoffice.impressremote"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+        </activity>
+
+        <service android:exported="false" android:name=".connectToServer.communication.CommunicationService" />
+    </application>
+
+</manifest>

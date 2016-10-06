@@ -1,0 +1,160 @@
+/* -*- Mode: Java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+/*
+ * This file is part of the LibreOffice project.
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ */
+package com.example.mohammad.myapplication.connectToServer.fragment.slides;
+
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.support.v4.content.LocalBroadcastManager;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.GridView;
+
+import com.example.mohammad.myapplication.R;
+import com.example.mohammad.myapplication.connectToServer.activity.SlideShowActivity;
+import com.example.mohammad.myapplication.connectToServer.adapter.SlidesGridAdapter;
+import com.example.mohammad.myapplication.connectToServer.communication.CommunicationService;
+import com.example.mohammad.myapplication.connectToServer.communication.SlideShow;
+import com.example.mohammad.myapplication.connectToServer.util.Intents;
+
+public class SlidesGridFragment extends AbstractSlideFragment implements ServiceConnection, AdapterView.OnItemClickListener {
+    // We need to keep track of this in order to know which slide needs 'resetting' when we change
+    // slides (i.e. the previously selected slide needs to have its highlighting removed,
+    // and the new selected slide needs to be highlighted -- there is nowhere else to retrieve which
+    // slide was previously selected for now).
+    private int mCurrentSlideIndex = 0;
+
+    private CommunicationService mCommunicationService;
+
+    public static SlidesGridFragment newInstance() {
+        return new SlidesGridFragment();
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater aInflater, ViewGroup aContainer, Bundle aSavedInstanceState) {
+        return aInflater.inflate(R.layout.fragment_slides_grid, aContainer, false);
+    }
+
+    @Override
+    public void onActivityCreated(Bundle aSavedInstanceState) {
+        super.onActivityCreated(aSavedInstanceState);
+
+        Intent aServiceIntent = Intents.buildCommunicationServiceIntent(getActivity());
+        getActivity().bindService(aServiceIntent, this, Context.BIND_AUTO_CREATE);
+    }
+
+    @Override
+    public void onServiceConnected(ComponentName aComponentName, IBinder aBinder) {
+        CommunicationService.ServiceBinder aServiceBinder = (CommunicationService.ServiceBinder) aBinder;
+        mCommunicationService = aServiceBinder.getService();
+
+        if (!isAdded()) {
+            return;
+        }
+
+        GridView aSlidesGrid = getSlidesGrid();
+        if (null == aSlidesGrid) return;
+
+        aSlidesGrid.setAdapter(buildSlidesAdapter());
+        aSlidesGrid.setOnItemClickListener(this);
+
+        mCurrentSlideIndex = mCommunicationService.getSlideShow().getCurrentSlideIndex();
+    }
+
+    private GridView getSlidesGrid() {
+        View slideSorter = getView();
+
+        return null == slideSorter ? null : (GridView) slideSorter.findViewById(R.id.grid_slides);
+    }
+
+    private SlidesGridAdapter buildSlidesAdapter() {
+        SlideShow aSlideShow = mCommunicationService.getSlideShow();
+
+        return new SlidesGridAdapter(getActivity(), aSlideShow);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> aAdapterView, View aView, int aPosition, long aId) {
+        changeCurrentSlide(aPosition);
+        changeSlideShowMode();
+    }
+
+    private void changeCurrentSlide(int aSlideIndex) {
+        mCommunicationService.getCommandsTransmitter().setCurrentSlide(aSlideIndex);
+    }
+
+    private void changeSlideShowMode() {
+        Intent aIntent = Intents.buildSlideShowModeChangedIntent(SlideShowActivity.Mode.PAGER);
+        getBroadcastManager().sendBroadcast(aIntent);
+    }
+
+    private LocalBroadcastManager getBroadcastManager() {
+        Context aContext = getActivity().getApplicationContext();
+
+        return LocalBroadcastManager.getInstance(aContext);
+    }
+
+    @Override
+    public void onServiceDisconnected(ComponentName aComponentName) {
+        mCommunicationService = null;
+    }
+
+    @Override
+    void slideShowStateChanged() {
+        GridView grid = getSlidesGrid();
+        if (grid != null) grid.invalidateViews();
+    }
+
+    @Override
+    void slideChanged() {
+        refreshSlidePreview(mCurrentSlideIndex);
+        mCurrentSlideIndex = mCommunicationService.getSlideShow().getCurrentSlideIndex();
+        refreshSlidePreview(mCurrentSlideIndex);
+        // TODO: we should probably just make the adapter cleverer so it can tell whether or not
+        // it needs to change a slide rather than brute-forcing from this end. This would also
+        // avoid completely rebuilding the view, i.e. we would know whether we need to refresh
+        // the preview independently of the highlighting changes.
+    }
+
+    @Override
+    void previewUpdated(int nSlideIndex) {
+        refreshSlidePreview(nSlideIndex);
+    }
+
+    @Override
+    void notesUpdated(int nSlideIndex) {
+        // We don't care about notes in the grid view.
+    }
+
+    private void refreshSlidePreview(int aSlideIndex) {
+        GridView aSlidesGrid = getSlidesGrid();
+        View aSlideView = (null == aSlidesGrid) ? null : aSlidesGrid.getChildAt(aSlideIndex);
+
+        if (aSlideView == null) {
+            return;
+        }
+
+        aSlidesGrid.getAdapter().getView(aSlideIndex, aSlideView, aSlidesGrid);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        if (mCommunicationService != null) getActivity().unbindService(this);
+    }
+
+}
+
+/* vim:set shiftwidth=4 softtabstop=4 expandtab: */
