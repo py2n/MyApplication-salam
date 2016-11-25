@@ -10,7 +10,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class uploader extends AppCompatActivity {
+public class uploadVideo extends AppCompatActivity {
 
     private final static int FILECHOOSER_RESULTCODE = 1;
     WebView webView;
@@ -36,8 +36,8 @@ public class uploader extends AppCompatActivity {
 //        WebView webView= (WebView) findViewById(R.id.wv);
         webView = new WebView(this);
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.setWebViewClient(new myWebClient());
-        webView.loadUrl("http://192.168.1.50:55000/upload");
+        webView.setWebViewClient(new uploadVideo.myWebClient());
+        webView.loadUrl("http://192.168.1.50:55000/uploadVideo");
         webView.setWebChromeClient(new WebChromeClient() {
 
             public void openFileChooser(ValueCallback<Uri> uploadMsg, String acceptType, String capture) {
@@ -45,7 +45,7 @@ public class uploader extends AppCompatActivity {
                 Intent i = new Intent(Intent.ACTION_GET_CONTENT);
                 i.addCategory(Intent.CATEGORY_OPENABLE);
                 i.setType("*/*");
-                uploader.this.startActivityForResult(Intent.createChooser(i, "FILE choocher"), uploader.FILECHOOSER_RESULTCODE);
+                uploadVideo.this.startActivityForResult(Intent.createChooser(i, "FILE choocher"), uploadVideo.FILECHOOSER_RESULTCODE);
             }
         });
         setContentView(webView);

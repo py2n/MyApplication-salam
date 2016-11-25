@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_management"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="com.example.mohammad.myapplication.management">
+
+    <Button
+        android:id="@+id/reboot"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_alignStart="@+id/button2"
+        android:layout_below="@+id/shutdown"
+        android:text="راه اندازی مجدد" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reboot"
+        android:layout_centerHorizontal="true"
+        android:text="حذف همه فایل ها" />
+
+    <Button
+        android:id="@+id/shutdown"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/reboot"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/reboot"
+        android:layout_marginTop="155dp"
+        android:text="خاموش کردن دستگاه" />
+
+    <!--<Button-->
+    <!--android:layout_width="200sp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:id="@+id/turndo"-->
+    <!--android:text="خاموش کردن صفحه نمایش"-->
+    <!--/>-->
+
+    <!--<Button-->
+    <!--android:layout_width="200sp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:id="@+id/displayon"-->
+    <!--android:text="روشن کردن صفحه نمایش"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:layout_toLeftOf="@+id/button"-->
+    <!--android:layout_toStartOf="@+id/button" />-->
+
+
+</RelativeLayout>

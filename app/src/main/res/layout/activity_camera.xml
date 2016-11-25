@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_camera"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="com.example.mohammad.myapplication.camera">
+
+
+    <Button
+        android:id="@+id/recordVideo"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button"
+        android:layout_alignStart="@+id/button"
+        android:layout_centerVertical="true"
+        android:text="ضبط فیلم" />
+
+    <Button
+        android:id="@+id/StopVideoRecord"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/recordVideo"
+        android:layout_alignStart="@+id/recordVideo"
+        android:layout_below="@+id/recordVideo"
+        android:text="اتمام ضبط فیلم" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/recordVideo"
+        android:layout_centerHorizontal="true"
+        android:text="عکس از تابلو" />
+
+</RelativeLayout>

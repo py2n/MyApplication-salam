@@ -2,9 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mohammad.myapplication">
 
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <uses-feature
+        android:name="android.hardware.bluetooth"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -21,53 +25,52 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".uploader"></activity>
-
+        <activity android:name=".uploader" />
         <activity
             android:name=".connectToServer.activity.ComputersActivity"
             android:theme="@style/Theme.ImpressRemote.Computers">
 
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN"/>-->
-                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
-            <!--</intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
 
         </activity>
-
         <activity
             android:name=".connectToServer.activity.ComputerCreationActivity"
             android:label="@string/title_creation"
-            android:theme="@style/Theme.ImpressRemote.ComputerCreation">
-        </activity>
-
+            android:theme="@style/Theme.ImpressRemote.ComputerCreation" />
         <activity
             android:name=".connectToServer.activity.ComputerConnectionActivity"
-            android:label="@string/title_connection">
-        </activity>
-
+            android:label="@string/title_connection" />
         <activity
             android:name=".connectToServer.activity.SlideShowActivity"
-            android:label="@string/title_slide_show">
-        </activity>
-
+            android:label="@string/title_slide_show" />
         <activity
             android:name=".connectToServer.activity.SettingsActivity"
-            android:label="@string/title_settings">
-        </activity>
-
+            android:label="@string/title_settings" />
         <activity
             android:name=".connectToServer.activity.RequirementsActivity"
             android:label="@string/title_requirements">
-
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <data android:scheme="org.libreoffice.impressremote"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
+                <action android:name="android.intent.action.VIEW" />
 
+                <data android:scheme="org.libreoffice.impressremote" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
 
-        <service android:exported="false" android:name=".connectToServer.communication.CommunicationService" />
+        <service
+            android:name=".connectToServer.communication.CommunicationService"
+            android:exported="false" />
+
+        <activity android:name=".uploadVideo" />
+        <activity android:name=".uploadActivity" />
+        <activity android:name=".camera" />
+        <activity android:name=".video" />
+        <activity android:name=".management" />
+        <activity android:name=".classManagement"></activity>
     </application>
 
 </manifest>

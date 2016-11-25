@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_class_management"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="com.example.mohammad.myapplication.classManagement">
+
+    <Button
+        android:id="@+id/students_questions"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/class_list"
+        android:layout_alignLeft="@+id/class_list"
+        android:layout_alignStart="@+id/class_list"
+        android:text="بارگیری سوالات دانشجویان" />
+
+    <Button
+        android:id="@+id/vote"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/students_questions"
+        android:layout_alignLeft="@+id/students_questions"
+        android:layout_alignStart="@+id/students_questions"
+        android:text="نظر سنجی" />
+
+    <Button
+        android:id="@+id/class_list"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/quiz"
+        android:layout_alignLeft="@+id/quiz"
+        android:layout_alignStart="@+id/quiz"
+        android:text="لیست کلاسی" />
+
+    <Button
+        android:id="@+id/quiz"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/present_absent"
+        android:layout_alignLeft="@+id/present_absent"
+        android:layout_alignStart="@+id/present_absent"
+        android:text="برگذاری کوییز" />
+
+    <Button
+        android:id="@+id/present_absent"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="139dp"
+        android:text="حضور و غیاب" />
+
+</RelativeLayout>

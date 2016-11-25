@@ -2,12 +2,10 @@
     <string name="app_name">دستیار استاد</string>
 
 
-
-
     <string name="application_name">نمایش گر اسلاید</string>
 
     <string name="title_computers">دستگاه متصل</string>
-    <string name="title_generic">Generic</string>
+    <string name="title_generic">عمومی</string>
     <string name="title_bluetooth" translatable="false">اتصال بلوتوث</string>
     <string name="title_wifi" translatable="false">اتصال وایرلس</string>
     <string name="title_settings">تنظیمات</string>
@@ -37,12 +35,12 @@
     <string name="button_start">شروع</string>
     <string name="button_remove">حذف</string>
 
-    <string name="message_impress_pin_validation">Go to “Slide Show → Impress Remote” in LibreOffice Impress and enter the code.</string>
-    <string name="message_connection_failed_title">Connection failed</string>
-    <string name="message_impress_remote_enabling">Make sure you have enabled remote control. Go to “Tools → Options → LibreOffice Impress → General” in LibreOffice Impress.</string>
-    <string name="message_impress_wifi_enabling">You should also enable experimental features using “Tools → Options → LibreOffice → Advanced”.</string>
-    <string name="message_impress_pairing_check">In case of Bluetooth pairing issues, please read the documentation supplied by your Operating System.</string>
-    <string name="message_ip_address_validation">Please enter a valid IP address.</string>
+    <string name="message_impress_pin_validation">به نرم افزار رفته و پین اتصال را در اینجا وارد کنید</string>
+    <string name="message_connection_failed_title">اتصال نا موفق</string>
+    <string name="message_impress_remote_enabling"></string>
+    <string name="message_impress_wifi_enabling"></string>
+    <string name="message_impress_pairing_check"></string>
+    <string name="message_ip_address_validation"></string>
     <string name="message_time_is_up">زمان به پایان رسید!</string>
     <string name="message_search_wifi">لطفا از روی یک شبکه بودن دستگاه با تبلت اطمینان حاصل نمایید</string>
     <string name="message_search_bluetooth">لطفا از روشن بودن بلوتوث دستگاه اطمینان حاصل نمایید.</string>
@@ -71,11 +69,11 @@
     <string name="preferences_quiet_mode_title">حالت بی صدا</string>
     <string name="preferences_quiet_mode_summary">قرار دادن دستگاه در حالت بی صدا هنگام نمایش اسلاید</string>
 
-    <string name="requirements_libreoffice_version">LibreOffice version 4.0.3 or higher running on a computer.</string>
-    <string name="requirements_libreoffice_general_enabled">Impress Remote enabled at “Tools → Options → LibreOffice Impress → General” in LibreOffice Impress.</string>
-    <string name="requirements_libreoffice_experimental_enabled">Experimental features enabled at “Tools → Options → LibreOffice → Advanced” in LibreOffice Impress.</string>
-    <string name="requirements_network_connection">The Android device and a computer connected to the same network.</string>
-    <string name="requirements_network_ports">If you have a firewall please ensure ports 1598 and 1599 are opened.</string>
-    <string name="requirements_bluetooth_connection">A computer with enabled Bluetooth.</string>
+    <string name="requirements_libreoffice_version"></string>
+    <string name="requirements_libreoffice_general_enabled"></string>
+    <string name="requirements_libreoffice_experimental_enabled"></string>
+    <string name="requirements_network_connection"></string>
+    <string name="requirements_network_ports"></string>
+    <string name="requirements_bluetooth_connection"></string>
 
 </resources>

@@ -8,15 +8,15 @@
 
     <gradient
         android:angle="270"
-        android:startColor="#dd176193"
-        android:centerColor="#a326c9"
-        android:endColor="#dd582ac4"
+        android:centerColor="#fbff00"
+        android:endColor="#ff9d00"
+        android:startColor="#ddffaa00"
         />
 
          <corners
-             android:bottomLeftRadius="10dp"
-             android:bottomRightRadius="10dp"
-             android:topLeftRadius="10dp"
-             android:topRightRadius="10dp" />
+             android:bottomLeftRadius="3dp"
+             android:bottomRightRadius="3dp"
+             android:topLeftRadius="3dp"
+             android:topRightRadius="3dp" />
 
 </shape> 
