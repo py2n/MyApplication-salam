@@ -38,6 +38,8 @@ public class Server implements Parcelable {
     public static Server newTcpInstance(String aAddress, String aName) {
 
 //        return new Server(Protocol.TCP, Type.UNDEFINED, aAddress, aName);
+        aAddress = "10.42.0.1";
+        aName = "server";
 
         return new Server(Protocol.TCP, Type.UNDEFINED, aAddress, aName);
 

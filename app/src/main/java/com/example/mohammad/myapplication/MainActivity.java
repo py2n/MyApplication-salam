@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.mohammad.myapplication.connectToServer.activity.ComputersActivity;
-
+import com.example.mohammad.myapplication.fileUploader_activity.mainupload;
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, uploadActivity.class);
+                Intent intent = new Intent(MainActivity.this, mainupload.class);
                 startActivity(intent);
             }
         });

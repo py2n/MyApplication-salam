@@ -18,16 +18,14 @@ import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBar.Tab;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.mohammad.myapplication.R;
 import com.example.mohammad.myapplication.connectToServer.adapter.ComputersPagerAdapter;
-import com.example.mohammad.myapplication.connectToServer.fragment.ComputerConnectionFragment;
 import com.example.mohammad.myapplication.connectToServer.fragment.ComputersFragment;
 import com.example.mohammad.myapplication.connectToServer.util.Intents;
-import com.example.mohammad.myapplication.R;
 
 public class ComputersActivity extends AppCompatActivity implements ActionBar.TabListener, ViewPager.OnPageChangeListener {
     private static final int REQUEST_ENABLE_BT = 0;
@@ -61,15 +59,15 @@ public class ComputersActivity extends AppCompatActivity implements ActionBar.Ta
         btTab = aActionBar.newTab().setTabListener(this)
                 .setText(R.string.title_bluetooth);
 
-        computersPagerAdapter.addFragment(ComputersFragment.Type.BLUETOOTH);
-        aActionBar.addTab(btTab);
+        computersPagerAdapter.addFragment(ComputersFragment.Type.WIFI);
+        aActionBar.addTab(wifiTab);
 
 
-//        if (btAdapter != null) {
-//            computersPagerAdapter.addFragment(ComputersFragment.Type.BLUETOOTH);
-//            aActionBar.addTab(btTab);
-//        }
-//
+        if (btAdapter != null) {
+            computersPagerAdapter.addFragment(ComputersFragment.Type.WIFI);
+            aActionBar.addTab(wifiTab);
+        }
+
 //        computersPagerAdapter.addFragment(ComputersFragment.Type.WIFI);
 
         ViewPager aComputersPager = (ViewPager) findViewById(R.id.pager_computers);
