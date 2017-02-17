@@ -1,8 +1,5 @@
 package com.example.mohammad.myapplication.fileUploader_activity;
 
-/**
- * Created by Mahmood_M on 09/02/2017.
- */
 
 import android.os.Bundle;
 import android.os.Handler;

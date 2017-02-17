@@ -11,7 +11,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -73,6 +72,7 @@ public class mainupload extends AppCompatActivity {
 
         logTxt = (TextView) findViewById(R.id.logText);
 
+
         Button btn = (Button) findViewById(R.id.fileSelectBtn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,20 +91,15 @@ public class mainupload extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText urlEdit = (EditText) findViewById(R.id.urlAddrEdit);
-                urlEdit.setText("http://192.168.0.50:55000/uploader");
-                if (urlEdit.getText().toString().equals("")) {
-                    logTxt.setText("Error : Enter URL Address");
-                } else {
+                String URL = "http://176.9.194.244:8085/uploader";
                     if (SelectedFile == null) {
                         logTxt.setText("Error : No File Selected");
                     } else {
-                        String URL = urlEdit.getText().toString();
                         uploadTask = new UploadTask();
                         uploadTask.execute(URL);
                     }
                 }
-            }
+
         });
 
         btn = (Button) findViewById(R.id.cancelBtn);
@@ -150,6 +145,7 @@ public class mainupload extends AppCompatActivity {
 
     private class UploadTask extends AsyncTask<String, Void, String> {
         ProgressBar pBar;
+
         Button btn;
         public MultiUploader uploader;
         Message Msg;
