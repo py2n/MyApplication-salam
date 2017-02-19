@@ -71,17 +71,17 @@
         <activity android:name=".camera" />
         <activity android:name=".video" />
         <activity android:name=".management" />
-        <activity android:name=".classManagement"></activity>
+        <activity android:name=".classManagement" />
+        <activity android:name=".fileUploader_activity.mainupload">
+
+            <!-- <intent-filter> -->
+            <!-- &lt;!&ndash;<action android:name="android.intent.action.MAIN" />&ndash;&gt; -->
 
 
-        <activity android:name="com.example.mohammad.myapplication.fileUploader_activity.mainupload">
-            <!--<intent-filter>-->
-            <!--&lt;!&ndash;<action android:name="android.intent.action.MAIN" />&ndash;&gt;-->
-
-            <!--&lt;!&ndash;<category android:name="android.intent.category.DEFAULT" />&ndash;&gt;-->
-            <!--</intent-filter>-->
+            <!-- &lt;!&ndash;<category android:name="android.intent.category.DEFAULT" />&ndash;&gt; -->
+            <!-- </intent-filter> -->
         </activity>
-
+        <activity android:name=".slideManagement"></activity>
     </application>
 
 </manifest>

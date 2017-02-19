@@ -20,11 +20,21 @@ public class MainActivity extends AppCompatActivity {
         Button ClassManagement = (Button) findViewById(R.id.classManagement);
         Button camera = (Button) findViewById(R.id.camera);
         final Button video = (Button) findViewById(R.id.video);
+        Button slideManagement = (Button) findViewById(R.id.slideManagement);
 
         camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, camera.class);
+                startActivity(intent);
+            }
+        });
+
+
+        slideManagement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, slideManagement.class);
                 startActivity(intent);
             }
         });

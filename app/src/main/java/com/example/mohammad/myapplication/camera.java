@@ -28,7 +28,7 @@ public class camera extends AppCompatActivity {
                 name = "salam";
                 RequestPackage p = new RequestPackage();
                 p.setMethod("POST");
-                p.setUri("http://192.168.1.50:55000/poem");
+                p.setUri("http://192.168.0.50:55000/poem");
                 p.setParam("noun1", name);
                 camera.MyTask task = new camera.MyTask();
                 task.execute(p);
@@ -42,7 +42,7 @@ public class camera extends AppCompatActivity {
                 String request = "start_record";
                 RequestPackage p = new RequestPackage();
                 p.setMethod("POST");
-                p.setUri("http://192.168.1.50:65000/poem");
+                p.setUri("http://192.168.0.50:55000/poem");
                 p.setParam("noun1", request);
                 camera.MyTask task = new camera.MyTask();
                 task.execute(p);
@@ -57,7 +57,7 @@ public class camera extends AppCompatActivity {
                 String request = "stop_record";
                 RequestPackage p = new RequestPackage();
                 p.setMethod("POST");
-                p.setUri("http://192.168.1.50:65000/poem");
+                p.setUri("http://192.168.0.50:55000/poem");
                 p.setParam("noun1", request);
                 camera.MyTask task = new camera.MyTask();
                 task.execute(p);

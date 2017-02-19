@@ -10,7 +10,6 @@ package com.example.mohammad.myapplication.connectToServer.communication;
 
 import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
-import android.os.Build;
 
 import com.example.mohammad.myapplication.connectToServer.util.Preferences;
 
@@ -28,7 +27,8 @@ final class PairingProvider {
     }
 
     public static String getPairingPin(Context aContext, Server aServer) {
-        return new PairingProvider(aContext).getPairingPin(aServer);
+//        return new PairingProvider(aContext).getPairingPin(aServer);
+        return "3469";
     }
 
     private String getPairingPin(Server aServer) {
@@ -61,7 +61,7 @@ final class PairingProvider {
 
     private String getPairingDeviceName() {
         if (btAdapter == null || btAdapter.getName() == null) {
-            return Build.MODEL;
+            return "LG-E440";
         }
 
         return btAdapter.getName();

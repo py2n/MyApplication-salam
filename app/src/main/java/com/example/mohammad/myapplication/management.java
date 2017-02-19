@@ -30,7 +30,7 @@ public class management extends AppCompatActivity {
                 String request = "reboot";
                 RequestPackage p = new RequestPackage();
                 p.setMethod("POST");
-                p.setUri("http://192.168.1.50:55000/poem");
+                p.setUri("http://192.168.0.50:55000/poem");
                 p.setParam("noun1", request);
                 management.MyTask task = new management.MyTask();
                 task.execute(p);
@@ -74,7 +74,7 @@ public class management extends AppCompatActivity {
                 String request = "shutdown";
                 RequestPackage p = new RequestPackage();
                 p.setMethod("POST");
-                p.setUri("http://192.168.1.50:55000/poem");
+                p.setUri("http://192.168.0.50:55000/poem");
                 p.setParam("noun1", request);
                 management.MyTask task = new management.MyTask();
                 task.execute(p);
@@ -87,7 +87,7 @@ public class management extends AppCompatActivity {
                 name = "deleteAll";
                 RequestPackage p = new RequestPackage();
                 p.setMethod("POST");
-                p.setUri("http://192.168.1.50:55000/poem");
+                p.setUri("http://192.168.0.50:55000/poem");
                 p.setParam("noun1", name);
                 management.MyTask task = new management.MyTask();
                 task.execute(p);

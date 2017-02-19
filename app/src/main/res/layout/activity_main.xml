@@ -34,6 +34,11 @@
                 android:layout_height="wrap_content"
                 android:text="فیلم" />
 
+            <Button
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:text="مدیریت اسلاید"
+                android:id="@+id/slideManagement" />
 
             <Button
                 android:id="@+id/slide"

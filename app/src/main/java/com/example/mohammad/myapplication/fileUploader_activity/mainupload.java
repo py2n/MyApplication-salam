@@ -139,13 +139,11 @@ public class mainupload extends AppCompatActivity {
                 }
                 break;
         }
-
         super.onActivityResult(requestCode, resultCode, data);
     }
 
     private class UploadTask extends AsyncTask<String, Void, String> {
         ProgressBar pBar;
-
         Button btn;
         public MultiUploader uploader;
         Message Msg;
@@ -167,7 +165,6 @@ public class mainupload extends AppCompatActivity {
                 B = new Bundle();
                 B.clear();
                 B.putStringArray("Msg", Response.toArray(new String[0]));
-
                 Message Msg = Message.obtain();
                 Msg.what = MultiUploader.MSG_DONE;
                 Msg.setData(B);
@@ -177,7 +174,6 @@ public class mainupload extends AppCompatActivity {
                 B = new Bundle();
                 B.clear();
                 B.putString("Msg", e.getMessage());
-
                 Msg = Message.obtain();
                 Msg.what = MultiUploader.MSG_SEND_ERROR;
                 Msg.setData(B);
